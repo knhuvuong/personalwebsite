@@ -519,10 +519,9 @@ ul.dropdown-menu li {
 .slider {
   background: url("../images/bg/0029fOSWgy1gvc9hi3tjdj61fc334e8202.jpg") no-repeat;
   background-size: cover;
-  background-position: 10% 0%;
+  background-position: 50% 50%;
   padding: 200px 0 280px 0;
   position: relative;
-  align-items: center;
 }
 
 .slider .block h1 {
@@ -565,21 +564,8 @@ ul.dropdown-menu li {
   color: #088ed3;
 }
 
-.bg-about {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 0px;
-  width: 45%;
-  min-height: 650px;
-  background: url("../images/about/home-8.jpg") no-repeat;
-  background-size: cover;
-}
-
 .about-item-img {
-  width: 200px;
-  height: 400px;
-  object-fit: contain;
+  margin-left: 70px;
 }
 .about-content {
   padding: 20px 0px 0px 80px;
@@ -780,7 +766,7 @@ ul.dropdown-menu li {
 }
 
 .col-lg-5 {
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .address-block li {
