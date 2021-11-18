@@ -44,7 +44,7 @@ h5, .h5 {
 }
 
 h6, .h6 {
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 p {
@@ -392,6 +392,11 @@ a:focus {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+.pb-4, .py-4 {
+  padding-bottom: 0.3rem !important;
+  padding-top: 0.3rem !important;
+}
+
 #navbar li {
   padding-left: 15px;
 }
@@ -419,31 +424,6 @@ a:focus {
   background: #222328;
   color: #919194;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.header-top .header-top-socials {
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 12px 0px;
-}
-
-.header-top .header-top-socials a {
-  color: #919194;
-  margin-right: 15px;
-  font-size: 16px;
-}
-
-.header-top .header-top-info {
-  color: #919194;
-  font-size: 16px;
-}
-
-.header-top .header-top-info a span {
-  color: #fff;
-}
-
-.header-top .header-top-info a {
-  margin-left: 35px;
-  color: #919194;
 }
 
 .navbar-brand {
@@ -494,12 +474,40 @@ a:focus {
   color: #fff;
 }
 
+.dropdown-item li {
+  background: #f75757;
+  color: #fff;
+}
+
+.dropdown-item li a {
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.dropdown-item li ul {
+  position: absolute;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: none;
+  line-height: normal;
+  background-color: #333;
+}
+
 ul.dropdown-menu li {
   padding-left: 0px !important;
 }
 
+.dropdown-menu1 {
+  float: right;
+}
+
 .bg-1 {
-  background: url("../images/bg/home-2.jpg") no-repeat 50% 50%;
+  background: url("../images/bg/c36004559186539aaa1802b8bc09de9b.gif") no-repeat 50% 50%;
   background-size: cover;
 }
 
@@ -509,11 +517,12 @@ ul.dropdown-menu li {
 }
 
 .slider {
-  background: url("../images/bg/home-1.jpg") no-repeat;
+  background: url("../images/bg/0029fOSWgy1gvc9hi3tjdj61fc334e8202.jpg") no-repeat;
   background-size: cover;
   background-position: 10% 0%;
   padding: 200px 0 280px 0;
   position: relative;
+  align-items: center;
 }
 
 .slider .block h1 {
@@ -567,6 +576,11 @@ ul.dropdown-menu li {
   background-size: cover;
 }
 
+.about-item-img {
+  width: 200px;
+  height: 400px;
+  object-fit: contain;
+}
 .about-content {
   padding: 20px 0px 0px 80px;
 }
@@ -739,71 +753,6 @@ ul.dropdown-menu li {
   line-height: 45px;
 }
 
-.pricing-header h1 {
-  font-size: 70px;
-  font-weight: 300;
-}
-
-.pricing .btn-solid-border {
-  border-color: #dedede;
-}
-
-.pricing .btn-solid-border:Hover {
-  border-color: #f75757;
-}
-
-.portflio-item .portfolio-item-content {
-  position: absolute;
-  content: "";
-  right: 0px;
-  bottom: 0px;
-  opacity: 0;
-  transition: all .35s ease;
-}
-
-.portflio-item:before {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  opacity: 0;
-  transition: all .35s ease;
-  overflow: hidden;
-}
-
-.portflio-item:hover:before {
-  opacity: 1;
-}
-
-.portflio-item:hover .portfolio-item-content {
-  opacity: 1;
-  bottom: 20px;
-  right: 30px;
-}
-
-.portflio-item .overlay-item {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 80px;
-  color: #f75757;
-  opacity: 0;
-  transition: all .35s ease;
-}
-
-.portflio-item:hover .overlay-item {
-  opacity: 1;
-}
-
 .contact-form-wrap .form-group {
   padding-bottom: 15px;
   margin: 0px;
@@ -827,6 +776,11 @@ ul.dropdown-menu li {
   border: 1px solid #EEF2F6;
   box-shadow: none;
   width: 100%;
+  font-size: 14px;
+}
+
+.col-lg-5 {
+  margin-top: 80px;
 }
 
 .address-block li {
@@ -1418,3 +1372,325 @@ h3.quote::before {
 }
 
 /*# sourceMappingURL=maps/style.css.map */
+
+.menu-lab1 {
+  margin-top: 50px;
+}
+.menu-lab2 {
+  margin-top: 50px;
+}
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style the tab */
+.tab {
+  overflow:hidden;
+  border: 1px solid #222328;
+  background-color: #fff;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: #222328;
+  float: left;
+  border: none;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 16.65px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #5d5c5e;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #5d5c5e;
+}
+
+/* Style the tab content */
+.tabcontent-1 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #222328;
+  border-top: none;
+}
+
+.column {
+  padding: 10px;
+}
+.row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.column img {
+  padding-bottom: 30px;
+}
+
+.column img + .column img {
+  padding-bottom: 30px;
+}
+
+.tabcontent-2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow: auto;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #222328;
+  border-top: none;
+}
+.label h3 {
+  text-align: center;
+}
+#Implements-2 {
+  background-color: #000;
+  height: 100%;
+  overflow: auto;
+}
+.tabcontent-2 img {
+  padding-bottom: 30px;
+}
+.tabcontent-2 img + .tabcontent-2 img {
+  padding-bottom: 30px;
+}
+.box .box-img img:hover {
+  transform: translateY(-10px);
+  transition: 0.2 all linear;
+}
+
+.tabcontent-3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #222328;
+  border-top: none;
+}
+
+/* Style the tab */
+.tab31 {
+  overflow:hidden;
+  background-color: #fff;
+}
+
+/* Style the buttons inside the tab */
+.tab31 button {
+  background-color: #222328;
+  float: left;
+  border: none;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+/* Change background color of buttons on hover */
+.tab31 button:hover {
+  background-color: #5d5c5e;
+}
+
+/* Create an active/current tablink class */
+.tab31 button.active {
+  background-color: #5d5c5e;
+}
+
+/* Style the tab content */
+.tabcontent {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+/* Style the tab content */
+.tabcontent {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+}
+
+.tabcontent img {
+  padding-bottom: 30px;
+}
+
+.tabcontent img + .tabcontent img {
+  padding-bottom: 30px;
+}
+
+.tabcontent-4 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  height: 500px;
+}
+
+
+/* Full-width inputs */
+input[type=text], input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+/*desgin*/
+.column {
+  width: 30%;
+}
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px 20px;
+  margin: 4px 2px;
+  border: none;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dee0e0;
+}
+
+.four-button {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 15px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.mb-5 {
+  font-size: 1.2rem;
+  line-height: 50px;
+  color: #000;
+}
+
+/*lab 2 implements */
+.bg-lab2 {
+  background-color: #222328;
+  width: auto;
+  height: 450px;
+}
+
+/*SKILLS BAR*/
+.skills-bar {
+  width: 100%;
+  border-radius: 15px;
+}
+.skills-bar .bar .infor span {
+  font-size: 20px;
+  font-weight: 700;
+}
+.skills-bar .bar .progress-line {
+  height: 20px;
+  width: 100%;
+  background: #e7dede;
+  position: relative;
+  transform-origin: left;
+  border-radius: 10px;
+}
+.bar .progress-line span {
+  height: 100%;
+  width: 80%;
+  background: #f75757;
+  position: absolute;
+  border-radius: 10px;
+}
+.progress-line.java span {
+  width: 70%;
+}
+.progress-line.html span {
+  width: 85%;
+}
+.bar .progress-line span::after {
+  position: absolute;
+  content: "";
+  top: -16px;
+  right: 0;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  padding: 1px 12px;
+  font-size: 15px;
+}
+.progress-line.java span::after{
+  content: "70%";
+}
+.progress-line.html span::after{
+  content: "85%";
+}
+
+/*implements*/
+.movies {
+  background-color: black;
+  color: white;
+}
+.movies-container {
+  max-width: 968px;
+  max-height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.movies .heading {
+  color: white;
+  font-size: 22px;
+  border-bottom: 2px solid red;
+}
+.movies h3 {
+  color: white;
+  font-size: 20px;
+}
+.movies h3 span {
+  font-size: 3px;
+}
