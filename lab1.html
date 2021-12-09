@@ -19,7 +19,7 @@
   <!-- Owl Carousel CSS -->
   <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
   <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -54,7 +54,8 @@
       </li>
        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-    </ul>
+       <li class="nav-item"><a class="nav-link" href="result.html">Result</a></li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -75,86 +76,178 @@
     </div>
 
     <div id="Design" class="tabcontent-1">
-      <div class="row1">
-        <div class="column">
-          <h5>Design</h5>
-          <img src="images/bg/lab1_design1.jpg">
-        </div>
-        <div class="column">
-          <h5>Figma</h5>
-          <img src="images/bg/lab1_design.png">
-        </div>
-      </div>
+      <h3>Design</h3>
+        <img src="images/bg/lab1_design.jpg">
+      <h3>Figma</h3>
+        <img src="images/bg/lab1_design1.jpg" width="100%" height="100%">
     </div>
 
 
     <div id="Implements" class="tabcontent-1">
-      <form>
         <div class="container">
+          <h3>Library Management System</h3>
           <div class="nav-action">
-            <div class="label">
-              <h3>Simple Library Management System</h3>
-              <label for="bname"><b>ID</b></label>
-              <input type="text" placeholder="Enter id book" name="bname" required>
-              <label for="bname"><b>Title</b></label>
-              <input type="text" placeholder="Enter title" name="bname" required>
-              <label for="authname"><b>Author</b></label>
-              <input type="text" placeholder="Enter author" name="bname" required>
-              <label for="bcategory"><b>Category</b></label>
-              <input type="text" placeholder="Enter category" name="author" required>
-              <label for="bname"><b>Publication</b></label>
-              <input type="text" placeholder="Enter Publication" name="bname" required>
+            <div class="table">
+        <table id="productTable"
+               class="table table-bordered table-condensed table-striped">
+          <thead>
+            <tr>
+              <th width="40px">Edit</th>
+              <th width="40px">ID</th>
+              <th width="110px">Title</th>
+              <th width="80px">Author</th>
+              <th width="50px">Delete</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        
+        <div class="panel panel-primary">
+          <div class="panel-body">
+            <div class="form-group">
+              <label for="id">
+                ID
+              </label>
+              <input type="text"
+                     class="form-control"
+                     value="010101"
+                     id="id" />
+            </div>
+            <div class="form-group">
+              <label for="title">
+                Title
+              </label>
+              <input type="text"
+                     class="form-control"
+                     value="Harry Potter and the Philosopher's Stone"
+                     id="title" />
+            </div>
+            <div class="form-group">
+              <label for="author">
+                Author
+              </label>
+              <input type="text"
+                     class="form-control"
+                     value="J.K Rowling"
+                     id="author" />
             </div>
             
-            <table>
-              <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Category</th>
-                <th>Publication</th>
-              </tr>
-              <tr>
-                <td>1234</td>
-                <td>Harry Potter</td>
-                <td>J. K. Rowling</td>
-                <td>Mysterious</td>
-                <td>1997</td>
-              </tr>
-              <tr>
-                <td>1235</td>
-                <td>Harry Potter</td>
-                <td>J. K. Rowling</td>
-                <td>Mysterious</td>
-                <td>1998</td>
-              </tr>
-              <tr>
-                <td>1236</td>
-                <td>Harry Potter</td>
-                <td>J. K. Rowling</td>
-                <td>Mysterious</td>
-                <td>1999</td>
-              </tr>
-              <tr>
-                <td>1237</td>
-                <td>Harry Potter</td>
-                <td>J. K. Rowling</td>
-                <td>Mysterious</td>
-                <td>2000</td>
-              </tr>
-            </table>
-
-
-
-            <div class="four-button">
-              <button class="add">Add </button>
-              <button class="del">Edit</button>
-              <button class="reset">Delete</button>
-              <button class="edit">Reset</button>
+          </div>
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-xs-12">
+                <button type="button" id="updateButton"
+                        class="btn btn-primary"
+                        onclick="productUpdate();">
+                  Add
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </form>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Current product being edited
+    var editRow = null;
+
+    function productDisplay(ctl) {
+      editRow = $(ctl).parents("tr");
+      var cols = editRow.children("td");
+
+      $("#id").val($(cols[1]).text());
+      $("#title").val($(cols[2]).text());
+      $("#author").val($(cols[3]).text());
+
+      // Change Update Button Text
+      $("#updateButton").text("Update");
+    }
+
+    function productUpdate() {
+      if ($("#updateButton").text() == "Update") {
+        productUpdateInTable();
+      }
+      else {
+        productAddToTable();
+      }
+
+      // Clear form fields
+      formClear();
+
+      // Focus to product name field
+      $("#productname").focus();
+    }
+
+    // Add product to <table>
+    function productAddToTable() {
+      // First check if a <tbody> tag exists, add one if not
+      if ($("#productTable tbody").length == 0) {
+        $("#productTable").append("<tbody></tbody>");
+      }
+
+      // Append product to table
+      $("#productTable tbody").append(
+        productBuildTableRow());
+    }
+
+    // Update product in <table>
+    function productUpdateInTable() {
+      // Add changed product to table
+      $(editRow).after(productBuildTableRow());
+
+      // Remove original product
+      $(editRow).remove();
+
+      // Clear form fields
+      formClear();
+
+      // Change Update Button Text
+      $("#updateButton").text("Add");
+    }
+
+    // Build a <table> row of Product data
+    function productBuildTableRow() {
+      var ret =
+      "<tr>" +
+        "<td>" +
+          "<button type='button' " +
+                  "onclick='productDisplay(this);' " +
+                  "class='btn-primary'>" +
+                  "<span class='bx bxs-edit-alt' />" +
+          "</button>" +
+        "</td>" +
+        "<td>" + $("#id").val() + "</td>" +
+        "<td>" + $("#title").val() + "</td>" +
+        "<td>" + $("#author").val() + "</td>" +
+        "<td>" +
+          "<button type='button' " +
+                  "onclick='productDelete(this);' " +
+                  "class='btn-primary'>" +
+                  "<span class='bx bx-x' />" +
+          "</button>" +
+        "</td>" +
+      "</tr>"
+
+      return ret;
+    }
+
+    // Delete product from <table>
+    function productDelete(ctl) {
+      $(ctl).parents("tr").remove();
+    }
+
+    // Clear form fields
+    function formClear() {
+      $("#id").val("");
+      $("#title").val("");
+      $("#author").val("");
+    }
+  </script>
     </div>
     <script>
     function openBtn(evt, btnName) {
