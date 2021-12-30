@@ -111,7 +111,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 }
 
 .btn-main:hover, .btn-transparent:hover, .btn-small:hover {
-  background: #dd0b0b;
+  background: #e61414;
   color: #fff;
 }
 
@@ -400,7 +400,12 @@ a:focus {
 #navbar li {
   padding-left: 15px;
 }
-
+.nav-item1 a {
+  background-color: #f75757;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
 #navbar .nav-link {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
@@ -566,7 +571,7 @@ ul.dropdown-menu li {
 }
 
 .about-item-img {
-  margin-left: 70px;
+  margin-top: 90px;
 }
 .about-content {
   padding: 20px 0px 0px 80px;
